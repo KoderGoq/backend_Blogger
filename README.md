@@ -50,7 +50,6 @@ Esta es una plataforma de blog construida con Node.js, Express y SQLite. Permite
     ```sh
     npm run dev
 
-
 ## Endpoints
 
 ### Usuarios
