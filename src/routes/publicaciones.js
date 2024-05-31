@@ -33,14 +33,27 @@ router.get('/:id', (req, res) => {
 // Agregar una nueva publicación
 router.post('/', (req, res) => {
   const { user_id, title, content } = req.body;
-  db.run('INSERT INTO Posts (user_id, title, content) VALUES (?, ?, ?)', [user_id, title, content], function (err) {
+
+  // Primero, verificamos si el user_id existe
+  db.get('SELECT id FROM Users WHERE id = ?', [user_id], (err, row) => {
     if (err) {
       res.status(500).send(err.message);
+    } else if (!row) {
+      // Si el usuario no existe, enviamos un error
+      res.status(400).send({ error: 'User ID does not exist' });
     } else {
-      res.status(201).send({ id: this.lastID });
+      // Si el usuario existe, insertamos la nueva publicación
+      db.run('INSERT INTO Posts (user_id, title, content) VALUES (?, ?, ?)', [user_id, title, content], function (err) {
+        if (err) {
+          res.status(500).send(err.message);
+        } else {
+          res.status(201).send({ id: this.lastID });
+        }
+      });
     }
   });
 });
+
 
 // Actualizar una publicación existente
 router.put('/:id', (req, res) => {

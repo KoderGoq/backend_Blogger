@@ -46,37 +46,42 @@ Esta es una plataforma de blog construida con Node.js, Express y SQLite. Permite
     ```sh
     npm i or npm intall
     
+4. Ejecuta el codigo en tu terminal
+    ```sh
+    npm run dev
+
+
 ## Endpoints
 
 ### Usuarios
-- GET /usuarios: Obtener todos los usuarios.
-- GET /usuarios/:id: Obtener un usuario por su ID.
-- POST /usuarios: Crear un nuevo usuario.
+- `GET` /usuarios: Obtener todos los usuarios.
+- `GET` /usuarios/:id: Obtener un usuario por su ID.
+- `POST` /usuarios: Crear un nuevo usuario.
     - Cuerpo de la solicitud: { "name": "Nombre", "email": "correo@ejemplo.com" }
-- PUT /usuarios/:id: Actualizar un usuario existente.
+- `PUT` /usuarios/:id: Actualizar un usuario existente.
     - Cuerpo de la solicitud: { "name": "Nombre", "email": "correo@ejemplo.com" }
-- DELETE /usuarios/:id: Eliminar un usuario.
-- DELETE /usuarios: Eliminar todos los usuarios.
+- `DELETE` /usuarios/:id: Eliminar un usuario.
+- `DELETE` /usuarios: Eliminar todos los usuarios.
 
 ### Publicaciones
-- GET /publicaciones: Obtener todas las publicaciones.
-- GET /publicaciones/:id: Obtener una publicación por su ID.
-- POST /publicaciones: Crear una nueva publicación.
+- `GET` /publicaciones: Obtener todas las publicaciones.
+- `GET` /publicaciones/:id: Obtener una publicación por su ID.
+- `POST` /publicaciones: Crear una nueva publicación.
     - Cuerpo de la solicitud: { "user_id": 1, "title": "Título", "content": "Contenido" }
-- PUT /publicaciones/:id: Actualizar una publicación existente.
+- `PUT` /publicaciones/:id: Actualizar una publicación existente.
     - Cuerpo de la solicitud: { "user_id": 1, "title": "Título", "content": "Contenido" }
-- DELETE /publicaciones/:id: Eliminar una publicación.
-- DELETE /publicaciones: Eliminar todas las publicaciones.
+- `DELETE` /publicaciones/:id: Eliminar una publicación.
+- `DELETE` /publicaciones: Eliminar todas las publicaciones.
 
 ### Comentarios
-- GET /comentarios: Obtener todos los comentarios.
-- GET /comentarios/:id: Obtener un comentario por su ID.
-- POST /comentarios: Crear un nuevo comentario.
+- `GET` /comentarios: Obtener todos los comentarios.
+- `GET` /comentarios/:id: Obtener un comentario por su ID.
+- `POST` /comentarios: Crear un nuevo comentario.
     - Cuerpo de la solicitud: { "post_id": 1, "name": "Nombre", "comment": "Comentario" }
-- PUT /comentarios/:id: Actualizar un comentario existente.
+- `PUT` /comentarios/:id: Actualizar un comentario existente.
     - Cuerpo de la solicitud: { "post_id": 1, "name": "Nombre", "comment": "Comentario" }
-- DELETE /comentarios/:id: Eliminar un comentario.
-- DELETE /comentarios: Eliminar todos los comentarios.
+- `DELETE` /comentarios/:id: Eliminar un comentario.
+- `DELETE` /comentarios: Eliminar todos los comentarios.
 
 ## Estructura de la Base de Datos
 ### Usuarios (Users)
